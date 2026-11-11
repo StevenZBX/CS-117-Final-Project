@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv*/
+.ipynb_checkpoints/
+third_party/
+data/
+datasets/
+weights/
+checkpoints/
+*.pth
+*.pt

@@ -1,0 +1,12 @@
+{
+  "LightGlue": {
+    "url": "https://github.com/cvg/LightGlue.git",
+    "commit": "5a650c444718caffc2669dc0094cde908f42dd73",
+    "path": "third_party/LightGlue"
+  },
+  "glue-factory": {
+    "url": "https://github.com/cvg/glue-factory.git",
+    "commit": "2d17e3b3bd7d30f0c828d4c4d3eac4ecefbf283d",
+    "path": "third_party/glue-factory"
+  }
+}

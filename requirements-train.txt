@@ -1,0 +1,25 @@
+# Optional D environment: install separately from the A-C environment.
+# Then install Glue Factory with --no-deps; see README.md.
+-r requirements.txt
+# Glue Factory runtime dependencies (LightGlue is supplied locally above).
+torch>=1.7
+torchvision>=0.8
+numpy
+opencv-python
+tqdm
+matplotlib
+scipy
+h5py
+omegaconf
+tensorboard
+albumentations
+kornia
+seaborn
+joblib
+scikit-learn~=1.3.0
+# Required by the official SIFT training configuration.
+pycolmap
+# scikit-learn 1.3 predates NumPy 2; retain a compatible NumPy/OpenCV family.
+numpy<2
+opencv-python<4.12
+opencv-python-headless<4.12
