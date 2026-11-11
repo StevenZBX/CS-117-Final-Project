@@ -50,3 +50,11 @@ Datasets and pretrained weights are not included or downloaded by this setup. Re
 - Freeze resize/homography handling, pixel-threshold coordinates, and zero-match scoring before test evaluation.
 - The upstream Glue Factory HPatches evaluation reports homography metrics; implement/verify the project's MMA metric rather than treating that output as MMA.
 - Save measured outputs in `results/` and document their exact command.
+
+## Directory guide
+
+- [configs/](configs/README.md): Experiment parameters and evaluation rules.
+- [scripts/](scripts/README.md): Team-written evaluation, aggregation, and plotting code.
+- [splits/](splits/README.md): Pilot/test and training/validation split manifests.
+- [results/](results/README.md): Measured outputs, figures, and run records.
+- [third_party/](third_party/README.md): Official external repositories, sources, and usage notes.
