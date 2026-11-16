@@ -7,4 +7,5 @@ opencv-python
 matplotlib
 kornia>=0.6.11
 tqdm
+kagglehub  # HPatches download in scripts/Hpatches_loader.py
 -e ./third_party/LightGlue

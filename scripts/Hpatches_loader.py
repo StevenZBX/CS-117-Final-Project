@@ -1,9 +1,6 @@
 from pathlib import Path
 import numpy as np
 import cv2
-import torch
-from lightglue import LightGlue, SuperPoint
-from lightglue.utils import numpy_image_to_torch, rbd
 
 
 # process data
@@ -34,7 +31,7 @@ def load_pairs(seq_dir: Path, k: int):
     """
     # k cannot be 1 which is compare to itself
     if k == 1:
-        return None
+        raise ValueError("K cannot be 1")
 
     img1 = cv2.imread(seq_dir / "1.ppm", cv2.IMREAD_GRAYSCALE)
     imgk = cv2.imread(seq_dir / f"{str(k)}.ppm", cv2.IMREAD_GRAYSCALE)
@@ -42,12 +39,8 @@ def load_pairs(seq_dir: Path, k: int):
     return img1, imgk, H
 
 
-def main():
+if __name__ == "__main__":
     p = get_data_root()
     print(f"path: {str(p)}")
     cls_list = list_sequences(p)
-    load_pairs(seq_dir=p / f"{cls_list[0]}", k=2)
-
-
-if __name__ == "__main__":
-    main()
+    img1, imgk, H = load_pairs(seq_dir=p / f"{cls_list[0]}", k=2)
