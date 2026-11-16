@@ -1,10 +1,13 @@
-# Core A-C environment. Use Python 3.10 or 3.11. Run from project root.
-# Upstream LightGlue runtime dependencies, plus progress reporting.
-torch>=1.9.1
-torchvision>=0.3
+# Project dependencies, including the existing external repositories.
+# Run installation from the project root. Use Python 3.10+ compatible with PyTorch.
 numpy
 opencv-python
 matplotlib
+torch>=1.9.1
+torchvision>=0.8
 kornia>=0.6.11
 tqdm
 -e ./third_party/LightGlue
+
+# Notebook kernel and display support.
+ipykernel
