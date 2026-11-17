@@ -7,7 +7,7 @@ torch>=1.9.1
 torchvision>=0.8
 kornia>=0.6.11
 tqdm
-kagglehub  # HPatches download in scripts/Hpatches_loader.py
+kagglehub  # HPatches download in scripts/dataset_load.py
 -e ./third_party/LightGlue
 
 # Notebook kernel and display support.
