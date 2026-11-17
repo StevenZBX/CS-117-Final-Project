@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=68"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
 
 [project]
 name = "cs117-feature-matching"
@@ -8,8 +8,9 @@ version = "0.1.0"
 description = "Controlled SIFT, SIFT + LightGlue, and SuperPoint + LightGlue comparisons on HPatches."
 readme = "README.md"
 requires-python = ">=3.10"
-# Keep shared runtime requirements aligned with requirements.txt.
-# The pinned Git dependency supports pip install -e . without a local LightGlue checkout.
+# ABC runtime dependencies; keep aligned with requirements.txt.
+# pip installs LightGlue and its dependencies automatically from this pinned revision;
+# no third_party checkout is required to run train.py, evaluate.py, or demo.ipynb.
 dependencies = [
     "numpy",
     "opencv-python",
@@ -29,8 +30,12 @@ notebook = ["jupyterlab"]
 [project.urls]
 Repository = "https://github.com/StevenZBX/CS-117-Final-Project"
 
-[tool.setuptools]
-# This is a checkout-based experiment project, not a standalone Python library.
-# Install dependency metadata only; execute scripts from the project root.
-# Do not auto-discover datasets, results, or third-party repositories as packages.
-packages = []
+[tool.hatch.metadata]
+# Allow the pinned LightGlue Git dependency.
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+# This checkout-based experiment installs dependency metadata only.
+# Hatchling keeps editable-install metadata out of the source directory.
+bypass-selection = true
+dev-mode-dirs = ["."]

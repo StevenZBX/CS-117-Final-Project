@@ -1,5 +1,6 @@
-# Project dependencies, including the existing external repositories.
-# Run installation from the project root. Use Python 3.10+ compatible with PyTorch.
+# Full ABC runtime dependencies; keep aligned with pyproject.toml.
+# Install with: pip install -r requirements.txt
+
 numpy
 opencv-python
 matplotlib
@@ -7,8 +8,6 @@ torch>=1.9.1
 torchvision>=0.8
 kornia>=0.6.11
 tqdm
-kagglehub  # HPatches download in scripts/dataset_load.py
--e ./third_party/LightGlue
-
-# Notebook kernel and display support.
+kagglehub
 ipykernel
+lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73
