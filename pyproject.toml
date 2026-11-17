@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cs117-feature-matching"
+version = "0.1.0"
+description = "Controlled SIFT, SIFT + LightGlue, and SuperPoint + LightGlue comparisons on HPatches."
+readme = "README.md"
+requires-python = ">=3.10"
+# Keep shared runtime requirements aligned with requirements.txt.
+# The pinned Git dependency supports pip install -e . without a local LightGlue checkout.
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "matplotlib",
+    "torch>=1.9.1",
+    "torchvision>=0.8",
+    "kornia>=0.6.11",
+    "tqdm",
+    "kagglehub",
+    "ipykernel",
+    "lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab"]
+
+[project.urls]
+Repository = "https://github.com/StevenZBX/CS-117-Final-Project"
+
+[tool.setuptools]
+# This is a checkout-based experiment project, not a standalone Python library.
+# Install dependency metadata only; execute scripts from the project root.
+# Do not auto-discover datasets, results, or third-party repositories as packages.
+packages = []
