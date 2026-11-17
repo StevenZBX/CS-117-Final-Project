@@ -4,14 +4,14 @@ Store the official repositories used by this project here, separately from the t
 
 | Directory | Source | Project role |
 | --- | --- | --- |
-| LightGlue/ | https://github.com/cvg/LightGlue | Shared SIFT feature support for A/B and pretrained matching/feature models for B/C |
+| LightGlue/ | https://github.com/cvg/LightGlue | Pretrained feature and matching library retained as external source; not called by the current A implementation |
 | glue-factory/ | https://github.com/cvg/glue-factory | Training and validation framework for optional method D |
 
 Both repositories include their official README and license files. Team installation instructions are in the root README.md. Sources and cloned commits are recorded in ../third_party_versions.json.
 
 ## Usage conventions
 
-- First run a minimal A/B experiment with LightGlue, then extend it to C.
+- The active evaluator runs OpenCV SIFT + ratio test directly; it does not expose learned-method adapters.
 - Use separate evaluation and training environments; refer to requirements.txt and requirements-train.txt respectively.
 - Prefer writing project code in scripts/. If upstream source changes are necessary, document the files and reasons and preserve reproducible patches or a fork.
 - Verify upstream evaluation metrics before use; they may differ from this project's MMA.
