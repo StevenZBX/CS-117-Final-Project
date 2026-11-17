@@ -24,13 +24,13 @@ source .venv/bin/activate
 .\.venv\Scripts\Activate.ps1
 ```
 
-From the project root, install the recorded LightGlue version and dependencies. Skip cloning folders that already exist.
+From the project root, install all dependencies with one command:
 
 ```bash
-git clone https://github.com/cvg/LightGlue.git third_party/LightGlue
-git -C third_party/LightGlue checkout 5a650c444718caffc2669dc0094cde908f42dd73
-python -m pip install -r requirements.txt
+pip install -e .
 ```
+
+`pyproject.toml` declares the dependencies, including the pinned LightGlue revision and its dependencies. No separate requirements installation or LightGlue clone is needed. `train.py` selects matching parameters for the three pretrained/baseline methods.
 
 The dataset is downloaded automatically if `data/hpatches-sequences-release/` is absent. Initial setup and model-weight downloads require internet access. Devices are selected automatically in the order CUDA → MPS → CPU; use `--device cuda`, `--device mps`, or `--device cpu` to choose explicitly.
 
