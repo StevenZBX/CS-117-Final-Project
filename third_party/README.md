@@ -1,26 +1,11 @@
-# third_party: Official external code
+# third_party: LightGlue
 
-Store the official repositories used by this project here, separately from the team's scripts/.
+The current project implements A (SIFT + ratio test), B (SIFT + LightGlue), and C (SuperPoint + LightGlue). The optional local LightGlue checkout provides upstream source and visualization examples; its revision is recorded in `../third_party_versions.json`.
 
-| Directory | Source | Project role |
+| Directory | Source | Role |
 | --- | --- | --- |
-| LightGlue/ | https://github.com/cvg/LightGlue | Pretrained feature and matching library retained as external source; not called by the current A implementation |
-| glue-factory/ | https://github.com/cvg/glue-factory | Training and validation framework for optional method D |
+| LightGlue/ | https://github.com/cvg/LightGlue | Pretrained matching, SuperPoint extraction, and demo visualization utilities |
 
-Both repositories include their official README and license files. Team installation instructions are in the root README.md. Sources and cloned commits are recorded in ../third_party_versions.json.
+From the project root, `pip install -e .` installs the pinned LightGlue package and all ABC runtime dependencies automatically. A local third_party checkout is not required for execution. The root .gitignore excludes downloaded external code while retaining this README.
 
-## Usage conventions
-
-- The active evaluator runs OpenCV SIFT + ratio test directly; it does not expose learned-method adapters.
-- Use separate evaluation and training environments; refer to requirements.txt and requirements-train.txt respectively.
-- Prefer writing project code in scripts/. If upstream source changes are necessary, document the files and reasons and preserve reproducible patches or a fork.
-- Verify upstream evaluation metrics before use; they may differ from this project's MMA.
-- Preserve upstream licenses and citation information.
-
-## Git and reproducibility
-
-The root .gitignore excludes the two external repositories but retains this README in the team repository. After cloning the team repository, teammates must restore both external repositories using the URL, path, and commit in third_party_versions.json.
-
-## Check-in relevance
-
-Documents external sources and distinguishes borrowed code from team-written code. Item 5 requires the team's GitHub URL and evidence of each member's actual contributions. Cloning an official repository alone does not constitute a completed experiment.
+Keep project changes in scripts/ and preserve upstream licenses and citations. scripts/train.py selects matching parameters on the 96 train sequences; scripts/evaluate.py uses the selected parameters on the 20 test sequences.
