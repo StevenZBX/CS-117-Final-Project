@@ -1,0 +1,2 @@
+method,parameter,value,train_mma@3,config_id,train_manifest_id
+C,filter_threshold,0.3,0.8658164879800708,aeca969e899bd398b37c6befabb085826451b5ddd04bc65678c1895740fe50ff,6f4682160c5bfb23a03203af335c4fbf76a7f18e4c1147c5b8c42ed53dfe4b63

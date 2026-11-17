@@ -1,0 +1,5 @@
+{
+  "url": "https://huggingface.co/datasets/vbalnt/hpatches/resolve/main/hpatches-sequences-release.zip",
+  "archive_sha256": "99cf7e1ca167896eb4ca2fe3d903beff6566243a3c0c8e07a13a2596648ad670",
+  "description": "Same full-image HPatches mirror used by original smoke-test notebook"
+}

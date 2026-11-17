@@ -1,0 +1,28 @@
+{
+  "max_side": 1024,
+  "max_keypoints": 2048,
+  "ratio": 0.8,
+  "opencv_threads": 4,
+  "sift": {
+    "nOctaveLayers": 3,
+    "contrastThreshold": 0.04,
+    "edgeThreshold": 10,
+    "sigma": 1.6
+  },
+  "descriptor_normalization": "rootsift",
+  "thresholds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "pixel_coordinates": "resized",
+  "zero_matches": "zero",
+  "threshold_comparison": "strict_less_than"
+}
